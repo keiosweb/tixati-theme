@@ -5,9 +5,11 @@
     <title>Pieces - Tixati Web Interface</title>
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="stylesheet" type="text/css" href="/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="icon.css">
+    <link rel="stylesheet" type="text/css" href="/icon.css">
     <script type="application/javascript" src="/jquery.min.js"></script>
     <script type="application/javascript"  src="/semantic.min.js"></script>
+    <script type="application/javascript" src="/jquery.tablesort.min.js"></script>
+
 </head>
 <body>
 
@@ -40,7 +42,7 @@
 <br/>
 <div class="ui container">
 
-    <table class="xferstable ui table">
+    <table class="xferstable ui sortable table" id="pieces-table">
         <thead>
         <tr>
             <th>Index</th>
@@ -62,7 +64,11 @@
     </table>
 </div>
 <br/>
-<br/>
+<script type="application/javascript">
+    $(document).ready(function () {
+        $('#pieces-table').tablesort();
+    });
+</script>
 
 </body>
 </html>

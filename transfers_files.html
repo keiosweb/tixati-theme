@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="/icon.css">
     <script type="application/javascript" src="/jquery.min.js"></script>
     <script type="application/javascript" src="/semantic.min.js"></script>
+    <script type="application/javascript" src="/jquery.tablesort.min.js"></script>
+
 </head>
 
 <script>
@@ -113,7 +115,8 @@
     </form>
 
 
-    <table class="xferstable ui table">
+    <table class="xferstable ui sortable table" id="files-table">
+        <thead>
         <tr>
             <th>&nbsp;</th>
             <th>Name</th>
@@ -121,6 +124,8 @@
             <th>Bytes</th>
             <th>Status</th>
         </tr>
+        </thead>
+        <tbody>
         <!--list_start files-->
         <tr class="$statusclass_alt$">
             <td><input class="selection" type="checkbox" name="$guid$" value="1" onclick="udctrls()"/></td>
@@ -130,10 +135,15 @@
             <td>$status$</td>
         </tr>
         <!--list_end-->
+        </tbody>
     </table>
 
     <br/>
 </div>
-
+<script type="application/javascript">
+    $(document).ready(function () {
+        $('#files-table').tablesort();
+    });
+</script>
 </body>
 </html>

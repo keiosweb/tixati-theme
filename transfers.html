@@ -70,6 +70,7 @@
     </table>
     <!--endif-->
 
+    <!-- todo - sorting doesn't work for sizes -->
     <table class="ui selectable sortable celled table" id="torrents-table">
         <thead>
         <tr>
@@ -294,8 +295,8 @@
                     <label>&nbsp;</label>
                     <input type="submit" name="update_outprio" Value="Apply"
                            class="selctrl ui submit button right floated"/>
+                </div>
             </td>
-        </tr>
         </tr>
     </table>
 
@@ -407,7 +408,7 @@
 </form>
 
 <br/>
-<script>
+<script type="application/javascript">
     $(document).ready(function () {
         $('#torrents-table').tablesort();
     });
