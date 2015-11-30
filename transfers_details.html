@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Details - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="icon.css">
+	<script type="application/javascript" src="/jquery.min.js"></script>
+	<script type="application/javascript"  src="/semantic.min.js"></script>
+</head>
+<body>
+
+	<div class="ui six item menu">
+		<a class="item" href="/home"><i class="large home icon"></i> Home</a>
+		<a class="active item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+		<a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+		<a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+		<a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
+		<a class="item" href="/help"><i class="large help icon"></i> Help</a>
+	</div>
+	<br/>
+
+	<div class="titlehdr">
+		$name$
+	</div>
+
+	<div class="ui eight item menu">
+
+		<a class="active item" href="details">Details</a>
+		<a class="item" href="files">Files</a>
+		<a class="item" href="trackers">Trackers</a>
+		<a class="item" href="peers">Peers</a>
+		<a class="item" href="pieces">Pieces</a>
+		<a class="item" href="bandwidth">Bandwidth</a>
+		<a class="item" href="eventlog">Event Log</a>
+		<a class="item" href="options">Options</a>
+
+	</div>
+
+	<br/>
+	<div class="ui container">
+		<h3>$shortstatus$</h3>
+		<br/>
+		<br/>
+		<div style="clear:both;"/>
+
+		<table class="xferdetailstopleftstats ui table">
+			<thead>
+				<tr>
+					<th colspan="3" class="center aligned">Progress</th>
+				</tr>
+				<tr>
+					<th>Bytes Complete</th> 
+					<th>Remaining</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<td>$bytes_complete$</td>
+				<td>$bytes_remaining$</td>
+				<td>$bytes_total$</td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<table class="xferdetailstopmiddlestats ui table">
+		<thead>
+			<tr>
+				<th colspan="3" class="center aligned">$piecesize$ Pieces</th>
+			</tr>
+			<tr>
+				<th>Saved</th>
+				<th>Remaining</th>
+				<th>Total</th>
+			</tr>
+		</thead> 
+		<tbody>
+			<tr>
+				<td>$pieces_complete$</td>
+				<td>$pieces_remaining$</td>
+				<td>$pieces_total$</td>
+			</tr> 
+		</tbody> 
+	</table>
+	<br />
+
+	<table class="xferdetailstoprightstats ui table">
+		<thead>
+			<tr>
+				<th colspan="3" class="center aligned">Availability</th>
+			</tr>
+			<tr>
+				<th>Seeds</th>
+				<th>Peers</th>
+				<th>Copies</th>
+			</tr>
+		</thead> 
+		<tr>
+
+			<td>$seeds$</td>
+			<td>$peers$</td>
+			<td>$availability$</td>
+		</tr>
+	</table>
+
+	<div style="clear:both;"/>
+
+	<br/>
+
+	<table class="xferdetailsbottomleftstats ui table">
+		<thead>
+			<tr>
+				<th>Upload Ratio</th>
+				<th>Swarm Avg. Download B/s</th>
+				<th>Local Avg. Download B/s</th>
+				<th>Elapsed Time</th>
+				<th>Remaining Time</th>
+			</tr> 
+		</thead>
+		<tbody>
+			<tr>
+				<td>$ul_ratio$</td>
+				<td>$swarm_avg_dlbps$</td>
+				<td>$local_avg_dlbps$</td>
+				<td>$elapsed_time$</td>
+				<td>$remaining_time$</td>
+			</tr> 
+		</tbody>
+	</table>
+
+
+	<table class="xferdetailsbottomrightstats ui definition table">
+		<thead>
+			<tr>
+				<td class=""></td>
+				<th>Total</th>
+				<th>File</th>
+				<th>Protocol</th>
+			</tr>
+		</thead> 
+		<tbody>
+			<tr>
+				<td class="">Bytes In</td>
+				<td>$in_bytes_total$</td>
+				<td>$in_bytes_file$</td>
+				<td>$in_bytes_protocol$</td>
+			</tr>
+			<tr>
+				<td class="">Bytes Out</td>
+				<td>$out_bytes_total$</td>
+				<td>$out_bytes_file$</td>
+				<td>$out_bytes_protocol$</td>
+			</tr>
+			<tr>
+				<td class="">B/s In</td>
+				<td>$in_bps_total$</td>
+				<td>$in_bps_file$</td>
+				<td>$in_bps_protocol$</td>
+			</tr>
+			<tr>
+				<td class="">B/s Out</td>
+				<td>$out_bps_total$</td>
+				<td>$out_bps_file$</td>
+				<td>$out_bps_protocol$</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div style="clear:both;"/>
+
+	<br/>
+
+
+	<form method="post" action="/transfers/$guid$/details/action" class="ui form">
+
+		<div class="ui three buttons menu">
+			<input class="ui button" type="submit" name="start" value="Start"/>
+			<input class="ui button" type="submit" name="stop" value="Stop"/>
+			<input class="ui button" type="submit" name="remove" value="Remove"/>
+		</div>
+		<div class="ui three buttons menu">
+			<input class="ui button" type="submit" name="searchdht" value="Search DHT"/>
+			<input class="ui button" type="submit" name="checkfiles" value="Check Files"/>
+			<input class="ui button" type="submit" name="delete" value="Delete Files"/>
+		</div>
+	</form>
+
+	<br/>
+</div>
+</body>
+</html>
+
+

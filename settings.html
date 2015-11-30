@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Settings - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript"  src="/semantic.min.js"></script>
+</head>
+<body>
+
+<div class="ui six item menu">
+    <a class="item" href="/home"><i class="large home icon"></i> Home</a>
+    <a class="item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+    <a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+    <a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+    <a class="active item" href="/settings"><i class="large settings icon"></i> Settings</a>
+    <a class="item" href="/help"><i class="large help icon"></i> Help</a>
+</div>
+
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action" class="ui form">
+    <table class="settingsbox ui table">
+        <tbody>
+        <tr>
+            <td>
+                <div class="field">
+                    <label>Download Slots</label>
+                    <input type="number" name="setting_dlslots" min="1" max="1000" value="$setting_dlslots$"/>
+                </div>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="setting_dlslotrecycle" value="1" $chk_setting_dlslotrecycle$/>
+                    <label>Recycle unused slots for uploads</label>
+                </div>
+            </td>
+            <td>
+                <div class="field">
+
+                    <label>Upload Slots</label>
+                    <input type="number" name="setting_ulslots" min="1" max="1000" value="$setting_ulslots$"/>
+                </div>
+
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="setting_ulslotrecycle" value="1" $chk_setting_ulslotrecycle$/>
+                    <label>Recycle unused slots for downloads</label>
+                </div>
+
+            </td>
+            <td><input type="submit" name="update_slots" Value="Apply" class="ui submit button align right floated"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action" class="ui form">
+    <table class="settingsbox ui table">
+        <tbody>
+        <tr>
+            <td>
+                <div class="ui field">
+                    <label>Stop seeding on upload ratio above</label>
+                    <input type="number" name="setting_seedingratiostop" step="0.1" min="0" max="100"
+                           value="$setting_seedingratiostop$"/>
+                </div>
+                <div class="ui field">
+                    <label>Stop constant seeds on upload ratio above</label>
+                    <input type="number" name="setting_constantratiostop" step="0.1" min="0" max="100"
+                           value="$setting_constantratiostop$"/>
+                </div>
+                <div class="ui field">
+                    <label>Stop created seeds on upload ratio above</label>
+                    <input type="number" name="setting_createdratiostop" step="0.1" min="0" max="100"
+                           value="$setting_createdratiostop$"/>
+                </div>
+
+            </td>
+            <td>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="setting_xferautostartnew" value="1" $chk_setting_xferautostartnew$/>
+                    <label>Start new transfers</label>
+                </div>
+                <br/><br/>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="setting_xferautorestart" value="1" $chk_setting_xferautorestart$/>
+                    <label>Start previously running on startup</label>
+                </div>
+            </td>
+            <td><input type="submit" name="update_xferautostartstop" Value="Apply"
+                       class="ui submit button  right floated"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action" class="ui form">
+    <table class="settingsbox ui table">
+        <tbody>
+        <tr>
+            <td>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="setting_webui_showfilter" value="1" $chk_setting_webui_showfilter$/>
+                    <label>Show filter-box for transfers in Web Interface</label>
+                </div>
+            </td>
+            <td><input type="submit" name="update_webui" Value="Apply" class="ui submit button  right floated"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>

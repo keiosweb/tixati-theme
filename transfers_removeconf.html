@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Confirm Remove - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript" src="/semantic.min.js"></script>
+</head>
+<body>
+
+<br/>
+Confirm Transfer Removal<br/>
+(This will not delete downloaded files)
+<br/>
+<br/>
+
+<form method="post" action="/transfers/action" class="ui form">
+
+    <table class="xferstable ui table">
+        <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+            <th>Bytes</th>
+            <th>&#37;</th>
+            <th>Status</th>
+            <th>B/s In</th>
+            <th>B/s Out</th>
+            <th>Priority</th>
+            <th>Time Left</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--list_start selected_transfers-->
+        <tr class="$statusclass_alt$">
+            <td><input type="checkbox" name="$guid$" value="1" checked/></td>
+            <td><a href="/transfers/$guid$/details">$name$</a></td>
+            <td>$bytes$</td>
+            <td>$progress$</td>
+            <td>$status$</td>
+            <td>$bps_in$</td>
+            <td>$bps_out$</td>
+            <td>$priority$</td>
+            <td>$timeleft$</td>
+        </tr>
+        <!--list_end-->
+        </tbody>
+    </table>
+
+    <br/>
+    <input class="ui submit red button" type="submit" name="removeconf" value="Remove Transfers"/>&nbsp;
+    <input class="ui submit button" type="submit" name="nav_transfers" Value="Cancel"/>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>
+
+

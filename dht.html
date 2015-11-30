@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>DHT - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript"  src="/semantic.min.js"></script>
+</head>
+<script>
+    <!--
+    function setupcharts() {
+        var w = window.innerWidth || document.documentElement.clientWidth;
+        w = Math.floor(Math.max(200, (w - 16) * 0.98));
+        var h = window.innerHeight || document.documentElement.clientHeight;
+        h = Math.floor(Math.max(120, h / 5 - 20));
+        document.getElementById("chart_orig").src = "dht/chart_orig_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_proc").src = "dht/chart_proc_" + w + "x" + h + "_1.png";
+        w = Math.floor(w / 2 - 2);
+        document.getElementById("chart_inpkts").src = "dht/chart_inpkts_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_outpkts").src = "dht/chart_outpkts_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_inbytes").src = "dht/chart_inbytes_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_outbytes").src = "dht/chart_outbytes_" + w + "x" + h + "_1.png";
+    }
+    //-->
+</script>
+<body onload="setupcharts()">
+
+<div class="ui six item menu">
+    <a class="item" href="/home"><i class="large home icon"></i> Home</a>
+    <a class="item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+    <a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+    <a class="active item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+    <a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
+    <a class="item" href="/help"><i class="large help icon"></i> Help</a>
+</div>
+
+<br/>
+
+<table class="dhtctrl ui table">
+    <thead>
+    <tr>
+        <th>Status:</th>
+        <th>Node ID:</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>$dht_status$</td>
+        <td>$dht_nodeid$</td>
+        <td>
+            <form method="post" action="/dht/action" class="ui form">
+                <input type="submit" name="start" Value="Start" class="ui button"/>&nbsp;<input type="submit"
+                                                                                                name="stop"
+                                                                                                class="ui button"
+                                                                                                Value="Stop"/>
+            </form>
+        </td>
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+
+<table class="dhtstats ui table">
+    <thead>
+    <tr>
+        <th>Table Buckets</th>
+        <th>Peer DB IDs</th>
+        <th>Running Searches</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="">$dht_table_buckets$</span></td>
+        <td><span class="">$dht_db_ids$</span></td>
+        <td><span class="">$dht_searches_running$</span></td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="ui table">
+    <thead>
+    <tr>
+        <th>Table Nodes</th>
+        <th>Peer DB Peers</th>
+        <th>Queued Searches</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="">$dht_table_nodes$</span></td>
+        <td><span class="">$dht_db_nodes$</span></td>
+        <td><span class="">$dht_searches_queued$</span></td>
+    </tr>
+    </tbody>
+</table>
+
+<noscript>
+    <image src="dht/chart_orig_480x170_1.png" alt="Originated Transactions / Minute"/>
+</noscript>
+<image id="chart_orig"/>
+<br/>
+<noscript>
+    <image src="dht/chart_proc_480x170_1.png" alt="Processed Transactions / Minute"/>
+</noscript>
+<image id="chart_proc"/>
+<br/>
+<noscript>
+    <image src="dht/chart_inpkts_235x170_1.png" alt="Incoming Packets / Minute"/>
+</noscript>
+<image id="chart_inpkts"/>
+<noscript>
+    <image src="dht/chart_outpkts_235x170_1.png" alt="Outgoing Packets / Minute"/>
+</noscript>
+<image id="chart_outpkts"/>
+<br/>
+<noscript>
+    <image src="dht/chart_inbytes_235x170_1.png" alt="Incoming Bytes / Second"/>
+</noscript>
+<image id="chart_inbytes"/>
+<noscript>
+    <image src="dht/chart_outbytes_235x170_1.png" alt="Outgoing Bytes / Second"/>
+</noscript>
+<image id="chart_outbytes"/>
+<br/>
+
+</body>
+</html>
+

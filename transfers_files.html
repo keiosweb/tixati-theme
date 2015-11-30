@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Files - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="icon.css">
+	<script type="application/javascript" src="/jquery.min.js"></script>
+	<script type="application/javascript"  src="/semantic.min.js"></script>
+</head>
+
+<script>
+<!--
+function udctrls()
+{
+	var inputs = document.getElementsByClassName("selection");
+	var sel = 0;
+	for(var i=inputs.length-1; i>=0; i--)
+	{
+		if(inputs[i].checked) sel=1;
+	}
+	var btns = document.getElementsByClassName("selctrl");
+	for(var i=btns.length-1; i>=0; i--)
+	{
+		if(sel) btns[i].disabled=false;
+		else btns[i].disabled=true;
+	}
+
+
+}
+//-->
+</script>
+
+<body onload="udctrls()">
+
+	<div class="ui six item menu">
+		<a class="item" href="/home"><i class="large home icon"></i> Home</a>
+		<a class="active item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+		<a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+		<a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+		<a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
+		<a class="item" href="/help"><i class="large help icon"></i> Help</a>
+	</div>
+
+	<br/>
+
+	<div class="titlehdr">
+		$name$
+	</div>
+
+	<div class="ui eight item menu">
+
+		<a class="item" href="details">Details</a>
+		<a class="active item" href="files">Files</a>
+		<a class="item" href="trackers">Trackers</a>
+		<a class="item" href="peers">Peers</a>
+		<a class="item" href="pieces">Pieces</a>
+		<a class="item" href="bandwidth">Bandwidth</a>
+		<a class="item" href="eventlog">Event Log</a>
+		<a class="item" href="options">Options</a>
+
+	</div>
+
+	<br/>
+	<div class="ui container">
+
+		<form method="post" action="/transfers/$guid$/files/action" class="ui form">
+
+			<table class="xferstable ui table">
+				<tr>
+					<th>&nbsp;</th>
+					<th>Name</th>
+					<th>Priority</th>
+					<th>Bytes</th>
+					<th>Status</th>
+				</tr>
+				<!--list_start files-->
+				<tr class="$statusclass_alt$">
+					<td><input class="selection" type="checkbox" name="$guid$" value="1" onclick="udctrls()"/></td>
+					<td>$name$</td>
+					<td>$priority$</td>
+					<td>$bytes$</td>
+					<td>$status$</td>
+				</tr>
+				<!--list_end-->
+			</table>
+
+			<br/>
+
+			<table class="xfersctrls ui table">
+				<tr>
+					<td>
+						<div class="field">
+							<label>Download Priority</label>
+							<select name="priority" class="selctrl">
+								<option value="1000">Ultra High</option>
+								<option value="500">Very High</option>
+								<option value="250">High</option>
+								<option value="150">Above Normal</option>
+								<option value="100" selected>Normal</option>
+								<option value="70">Below Normal</option>
+								<option value="50">Low</option>
+								<option value="25">Very Low</option>
+								<option value="10">Ultra Low</option>
+								<option value="0">Off</option>
+							</select>
+						</div> 
+					</td>
+					<td>
+						<div class="field">
+							<label>Sequential</label>
+							<select name="bte_priority" class="selctrl">
+								<option value="100">Aggressive</option>
+								<option value="50">On</option>
+								<option value="0" selected>Off</option>
+							</select>
+						</div>
+					</td>
+					<td>
+						<div class="field">
+						<label>Head and Tail First</label>
+						<select name="hat_priority" class="selctrl">
+							<option value="100">Aggressive</option>
+							<option value="50">On</option>
+							<option value="0" selected>Off</option>
+						</select>
+					</div>
+					</td>
+					<td><br />
+						<input type="submit" name="update_priority" Value="Apply" class="selctrl ui submit button right floated"/></td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
+	<br/>
+
+</body>
+</html>

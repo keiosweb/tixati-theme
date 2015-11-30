@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Bandwidth - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript"  src="/semantic.min.js"></script>
+</head>
+<script>
+    <!--
+    function setupcharts() {
+        var w = window.innerWidth || document.documentElement.clientWidth;
+        w = Math.floor(Math.max(200, (w - 16) * 0.98));
+        var h = window.innerHeight || document.documentElement.clientHeight;
+        h = Math.floor(Math.max(120, h / 2 - 90));
+        document.getElementById("chart_in").src = "bandwidth/chart_in_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_out").src = "bandwidth/chart_out_" + w + "x" + h + "_1.png";
+        document.getElementById("chart_ping").src = "bandwidth/chart_ping_" + w + "x" + h + "_1.png";
+    }
+    //-->
+</script>
+<body onload="setupcharts()">
+
+
+<div class="ui six item menu">
+    <a class="item" href="/home"><i class="large home icon"></i> Home</a>
+    <a class="item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+    <a class="active item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+    <a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+    <a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
+    <a class="item" href="/help"><i class="large help icon"></i> Help</a>
+</div>
+
+
+<br>
+<form method="post" action="/bandwidth/action" class="ui form">
+    <table class="bwctrls ui table">
+        <tbody>
+        <tr>
+            <td>
+                <div class="field">
+                    <input type="number" name="throttle_in_kbps" min="1" max="100000" value="$throttle_in_kbps$"/>
+                </div>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="throttle_in" value="1" $throttle_in_checked$/>
+                    <label>KB/s In</label>
+                </div>
+            </td>
+            <td>
+                <div class="field">
+                    <input type="number" name="throttle_out_kbps" min="1" max="100000" value="$throttle_out_kbps$"/>
+                </div>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="throttle_out" value="1" $throttle_out_checked$/>
+                    <label>KB/s Out</label>
+                </div>
+            </td>
+            <td>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" name="autolimit" value="1" $autolimit_checked$/><label>Auto-Limit </label>
+                </div>
+            </td>
+            <td>
+                <div class="field"><select name="bwpresets"><!--select bwpresets--></select>
+                    <label>Presets</label>
+                </div>
+            </td>
+            <td>
+
+                <input type="submit" name="update" Value="Apply" class="ui submit button"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+
+<noscript>
+    <image class="bwviewchart" src="bandwidth/chart_in_480x300_1.png" alt="Incoming Bandwidth"/>
+</noscript>
+<image class="bwviewchart" id="chart_in"/>
+<br/>
+<noscript>
+    <image class="bwviewchart" src="bandwidth/chart_out_480x300_1.png" alt="Outgoing Bandwidth"/>
+</noscript>
+<image class="bwviewchart" id="chart_out"/>
+<br/>
+<!--if autolimit-->
+<noscript>
+    <image class="bwviewchart" src="bandwidth/chart_ping_480x300_1.png" alt="Auto-Limit Ping Round Trip Milliseconds"/>
+</noscript>
+<image class="bwviewchart" id="chart_ping"/>
+<br/>
+<!--endif-->
+<br/>
+
+</body>
+</html>
+

@@ -1,0 +1,736 @@
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #000;
+    background-color: #FFF;
+}
+
+table.topnav {
+    text-align: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.topnav td {
+    vertical-align: top;
+    width: 17%;
+    text-align: center;
+}
+
+td.topnavselitem {
+    font-weight: bold;
+}
+
+table.eventlogview {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: left;
+    border: 2px solid;
+}
+
+table.eventlogview td {
+    padding: 0 2pt;
+}
+
+table.settingsbox {
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: left;
+    border: 2px solid;
+}
+
+table.settingsbox td {
+    padding: 6pt 6pt;
+}
+
+/* for home view */
+
+.titlehdr {
+    font-weight: bold;
+    font-size: 125%;
+    text-align: center;
+}
+
+table.homestats {
+    width: 100%;
+    text-align: left;
+}
+
+table.homestats th {
+    width: 33%;
+    font-weight: bold;
+    padding: 1pt 14pt;
+}
+
+table.homestats td {
+    width: 33%;
+    padding: 0 14pt;
+}
+
+span.homestatsdata {
+    float: right;
+    font-weight: normal;
+}
+
+/* transfers view */
+
+table.xfernav {
+    text-align: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.xfernav td {
+    vertical-align: top;
+    width: 12%;
+    text-align: center;
+}
+
+td.xfernavselitem {
+    vertical-align: top;
+    width: 12%;
+    text-align: center;
+    font-weight: bold;
+}
+
+table.xferstable {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: left;
+    border: 2px solid;
+    margin-bottom: 8pt;
+}
+
+table.xferstable th {
+    padding: 0 2pt;
+    border-width: 0;
+    font-weight: bold;
+}
+
+table.xferstable td {
+    padding: 0 2pt;
+    border-width: 0;
+}
+
+table.xferstable a {
+    color: inherit;
+}
+
+table.xfersctrls {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 2px solid;
+    margin-bottom: 8pt;
+}
+
+table.xfersctrls td {
+    padding: 4pt 6pt;
+}
+
+.offline_even {
+    color: #9E2E27;
+    background-color: #EEE;
+}
+
+.queued_even {
+    color: #00F;
+    background-color: #EEE;
+}
+
+.downloading_even {
+    color: #0C6000;
+    background-color: #EEE;
+}
+
+.seeding_even {
+    color: #259985;
+    background-color: #EEE;
+}
+
+.standby_even {
+    color: #00F;
+    background-color: #EEE;
+}
+
+.complete_even {
+    color: #87215B;
+    background-color: #EEE;
+}
+
+.offline_odd {
+    color: #9E2E27;
+    background-color: #FFF;
+}
+
+.queued_odd {
+    color: #00F;
+    background-color: #FFF;
+}
+
+.downloading_odd {
+    color: #0C6000;
+    background-color: #FFF;
+}
+
+.seeding_odd {
+    color: #259985;
+    background-color: #FFF;
+}
+
+.standby_odd {
+    color: #00F;
+    background-color: #FFF;
+}
+
+.complete_odd {
+    color: #87215B;
+    background-color: #FFF;
+}
+
+.offline {
+    color: #9E2E27;
+}
+
+.queued {
+    color: #00F;
+}
+
+.downloading {
+    color: #0C6000;
+}
+
+.seeding {
+    color: #259985;
+}
+
+.standby {
+    color: #00F;
+}
+
+.complete {
+    color: #87215B;
+}
+
+.file_incomplete {
+    color: #608F00;
+}
+
+.file_complete {
+    color: #004572;
+}
+
+.file_error {
+    color: #E60000;
+}
+
+.file_nonexist {
+    color: #6F6F6F;
+}
+
+.file_incomplete_even {
+    color: #608F00;
+    background-color: #EEE;
+}
+
+.file_complete_even {
+    color: #004572;
+    background-color: #EEE;
+}
+
+.file_error_even {
+    color: #E60000;
+    background-color: #EEE;
+}
+
+.file_nonexist_even {
+    color: #6F6F6F;
+    background-color: #EEE;
+}
+
+.file_incomplete_odd {
+    color: #608F00;
+    background-color: #FFF;
+}
+
+.file_complete_odd {
+    color: #004572;
+    background-color: #FFF;
+}
+
+.file_error_odd {
+    color: #E60000;
+    background-color: #FFF;
+}
+
+.file_nonexist_odd {
+    color: #6F6F6F;
+    background-color: #FFF;
+}
+
+.tracker_inactive {
+    color: #000;
+}
+
+.tracker_active {
+    color: #007900;
+}
+
+.tracker_error {
+    color: #D90000;
+}
+
+.tracker_inactive_even {
+    color: #000;
+    background-color: #EEE;
+}
+
+.tracker_active_even {
+    color: #007900;
+    background-color: #EEE;
+}
+
+.tracker_error_even {
+    color: #D90000;
+    background-color: #EEE;
+}
+
+.tracker_inactive_odd {
+    color: #000;
+    background-color: #FFF;
+}
+
+.tracker_active_odd {
+    color: #007900;
+    background-color: #FFF;
+}
+
+.tracker_error_odd {
+    color: #D90000;
+    background-color: #FFF;
+}
+
+.peer_table > tbody > tr > td > span {
+    background: #E8E8E8 none;
+    border: 0 solid transparent;
+    border-radius: 0.285714rem;
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: baseline;
+    margin: 0 0.5em 0 0;
+    min-width: 2em;
+    padding: 0.4em 0.833em;
+    text-align: center;
+    font-size: 8px;
+
+}
+
+.peer_ignored {
+    color: #F00;
+}
+
+.peer_online {
+    color: #0A5C00;
+}
+
+.peer_offline {
+    color: #737373;
+}
+
+.peer_connecting {
+    color: #E19100;
+}
+
+.peer_online_complete {
+    color: #00409B;
+}
+
+.peer_offline_complete {
+    color: #6D73B3;
+}
+
+.peer_fresh {
+    color: #737373;
+}
+
+.peer_ignored_even {
+    color: #F00;
+    background-color: #EEE;
+}
+
+.peer_online_even {
+    color: #0A5C00;
+    background-color: #EEE;
+}
+
+.peer_offline_even {
+    color: #737373;
+    background-color: #EEE;
+}
+
+.peer_connecting_even {
+    color: #E19100;
+    background-color: #EEE;
+}
+
+.peer_online_complete_even {
+    color: #00409B;
+    background-color: #EEE;
+}
+
+.peer_offline_complete_even {
+    color: #6D73B3;
+    background-color: #EEE;
+}
+
+.peer_fresh_even {
+    color: #737373;
+    background-color: #EEE;
+}
+
+.peer_ignored_odd {
+    color: #F00;
+    background-color: #FFF;
+}
+
+.peer_online_odd {
+    color: #0A5C00;
+    background-color: #FFF;
+}
+
+.peer_offline_odd {
+    color: #737373;
+    background-color: #FFF;
+}
+
+.peer_connecting_odd {
+    color: #E19100;
+    background-color: #FFF;
+}
+
+.peer_online_complete_odd {
+    color: #00409B;
+    background-color: #FFF;
+}
+
+.peer_offline_complete_odd {
+    color: #6D73B3;
+    background-color: #FFF;
+}
+
+.peer_fresh_odd {
+    color: #737373;
+    background-color: #FFF;
+}
+
+.peerstatus_in_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_in_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus_li_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_li_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus_rc_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_rc_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus_out_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_out_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus_ri_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_ri_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus_lc_on {
+    color: #04AD04 !important;
+    background-color: #AFF8AF !important;
+}
+
+.peerstatus_lc_off {
+    color: #F8385A !important;
+    background-color: #FFC0AB !important;
+}
+
+.peerstatus {
+    color: #000;
+}
+
+.piece_stopped {
+    color: #D40000;
+}
+
+.piece_running {
+    color: #004C00;
+}
+
+.piece_new {
+    color: #657065;
+}
+
+.piece_stopped_even {
+    color: #D40000;
+    background-color: #EEE;
+}
+
+.piece_running_even {
+    color: #004C00;
+    background-color: #EEE;
+}
+
+.piece_new_even {
+    color: #657065;
+    background-color: #EEE;
+}
+
+.piece_stopped_odd {
+    color: #D40000;
+    background-color: #FFF;
+}
+
+.piece_running_odd {
+    color: #004C00;
+    background-color: #FFF;
+}
+
+.piece_new_odd {
+    color: #657065;
+    background-color: #FFF;
+}
+
+/* transfer details */
+
+table.xferdetailsctrls {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 2px solid;
+    margin-bottom: 8pt;
+}
+
+table.xferdetailsctrls td {
+    padding: 4pt 6pt;
+}
+
+table.xferdetailstopstats {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: left;
+}
+
+table.xferdetailstopstats th {
+    width: 33%;
+    font-weight: bold;
+}
+
+table.xferdetailstopstats td {
+    width: 33%;
+}
+
+span.xferdetailstopstatsdata {
+    float: right;
+    font-weight: normal;
+    padding: 0 20pt;
+}
+
+table.xferdetailstopleftstats {
+    width: 28%;
+    margin-left: 2%;
+    float: left;
+    text-align: left;
+}
+
+table.xferdetailstopleftstats th {
+    font-weight: bold;
+}
+
+table.xferdetailstopleftstats td {
+    padding: 0 0;
+}
+
+table.xferdetailstopmiddlestats {
+    width: 28%;
+    margin-left: 6%;
+    float: left;
+    text-align: left;
+}
+
+table.xferdetailstopmiddlestats th {
+    font-weight: bold;
+}
+
+table.xferdetailstopmiddlestats td {
+    padding: 0 0;
+}
+
+table.xferdetailstoprightstats {
+    width: 28%;
+    margin-right: 2%;
+    float: right;
+    text-align: left;
+}
+
+table.xferdetailstoprightstats th {
+    font-weight: bold;
+}
+
+table.xferdetailstoprightstats td {
+    padding: 0 0;
+}
+
+table.xferdetailsbottomleftstats {
+    width: 40%;
+    margin-left: 2%;
+    float: left;
+    text-align: left;
+}
+
+table.xferdetailsbottomleftstats th {
+    font-weight: bold;
+}
+
+table.xferdetailsbottomleftstats td {
+    text-align: right;
+    padding: 0 3pt;
+}
+
+table.xferdetailsbottomrightstats {
+    width: 52%;
+    margin-right: 2%;
+    float: right;
+    text-align: left;
+    table-layout: fixed;
+}
+
+table.xferdetailsbottomrightstats th {
+    font-weight: bold;
+}
+
+table.xferdetailsbottomrightstats td {
+    text-align: right;
+    padding: 0 3pt;
+}
+
+/* transfer settings */
+
+table.xfersettingstopctrls {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 2px solid;
+    margin-bottom: 8pt;
+    text-align: center;
+}
+
+table.xfersettingstopctrls td {
+    padding: 4pt 6pt;
+}
+
+table.xfersettingsctrls {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 2px solid;
+    margin-bottom: 8pt;
+    text-align: left;
+}
+
+table.xfersettingsctrls td {
+    padding: 4pt 6pt;
+}
+
+/* bandwidth view */
+
+table.bwctrls {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 8pt;
+    border: 2px solid;
+}
+
+table.bwctrls td {
+    padding: 4pt 7pt;
+}
+
+.bwviewchart {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 4pt;
+}
+
+/* dht view */
+
+table.dhtctrl {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: left;
+    border: 2px solid;
+    padding: 3pt 6pt;
+    margin-bottom: 6pt;
+}
+
+table.dhtstats {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: left;
+    border: 2px solid;
+    padding: 3pt 6pt;
+    margin-bottom: 6pt;
+}
+
+table.dhtstats td {
+    width: 33%;
+    padding: 0 10pt;
+}
+
+span.dhtstatsdata {
+    float: right;
+    font-weight: normal;
+}
+
