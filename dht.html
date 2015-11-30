@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="semantic.min.css">
     <link rel="stylesheet" type="text/css" href="icon.css">
     <script type="application/javascript" src="/jquery.min.js"></script>
-    <script type="application/javascript"  src="/semantic.min.js"></script>
+    <script type="application/javascript" src="/semantic.min.js"></script>
 </head>
 <script>
     <!--
@@ -42,8 +42,8 @@
 <table class="dhtctrl ui table">
     <thead>
     <tr>
-        <th>Status:</th>
-        <th>Node ID:</th>
+        <th>Status</th>
+        <th>Node ID</th>
         <th></th>
     </tr>
     </thead>
@@ -51,23 +51,18 @@
     <tr>
         <td>$dht_status$</td>
         <td>$dht_nodeid$</td>
-        <td>
+        <td class="right aligned">
             <form method="post" action="/dht/action" class="ui form">
-                <input type="submit" name="start" Value="Start" class="ui button"/>&nbsp;<input type="submit"
-                                                                                                name="stop"
-                                                                                                class="ui button"
-                                                                                                Value="Stop"/>
+                <input type="submit" name="start" Value="Start" class="ui green button"/>&nbsp;
+                <input type="submit" name="stop" class="ui red button" Value="Stop"/>
             </form>
         </td>
     </tr>
-
     </tbody>
-
-
 </table>
 
 
-<table class="dhtstats ui table">
+<table class="dhtstats ui table center aligned">
     <thead>
     <tr>
         <th>Table Buckets</th>
@@ -85,7 +80,7 @@
     </tbody>
 </table>
 
-<table class="ui table">
+<table class="ui table center aligned">
     <thead>
     <tr>
         <th>Table Nodes</th>
