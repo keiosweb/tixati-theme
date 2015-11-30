@@ -1,81 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="content-type">
-	<title>Home - Tixati Web Interface</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" type="text/css" href="semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="icon.css">
-	<script type="application/javascript" src="/jquery.min.js"></script>
-	<script type="application/javascript"  src="/semantic.min.js"></script>
+    <link rel="icon" type="image/png" href="/favico.png">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Home - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript" src="/semantic.min.js"></script>
 </head>
 <body>
 
-	<div class="ui six item menu">
-		<a class="active item" href="/home"><i class="large home icon"></i> Home</a>
-		<a class="item" href="/transfers"><i class="large download icon"></i> Transfers</a>
-		<a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
-		<a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
-		<a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
-		<a class="item" href="/help"><i class="large help icon"></i> Help</a>
-	</div>
+<div class="ui six item menu">
+    <a class="active item" href="/home"><i class="large home icon"></i> Home</a>
+    <a class="item" href="/transfers"><i class="large download icon"></i> Transfers</a>
+    <a class="item" href="/bandwidth"><i class="large bar chart icon"></i> Bandwidth</a>
+    <a class="item" href="/dht"><i class="large lightning icon"></i> DHT</a>
+    <a class="item" href="/settings"><i class="large settings icon"></i> Settings</a>
+    <a class="item" href="/help"><i class="large help icon"></i> Help</a>
+</div>
 
-	<br/>
+<br/>
 
-	<div class="titlehdr">
-		Tixati v$strver$ Web Interface
-	</div>
+<div class="titlehdr">
+    Tixati v$strver$ Web Interface
+</div>
 
-	<br/>
-	<div class="ui container">
-		<table class="ui green celled table">
-			<thead>
-				<th>Active Transfers</th>
-				<th>Bytes Transferred</th>
-				<th>Incoming Connections</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Downloading&nbsp;&nbsp;<span class="homestatsdata">$downloading$</span></td>
-					<td>Total Bytes In&nbsp;&nbsp;<span class="homestatsdata">$totalbytesin$</span></td>
-					<td>Port&nbsp;&nbsp;<span class="homestatsdata">$inc_port$</span></td>
-				</tr>
-				<tr>
-					<td>Seeding&nbsp;&nbsp;<span class="homestatsdata">$seeding$</span></td>
-					<td>Total Bytes Out&nbsp;&nbsp;<span class="homestatsdata">$totalbytesout$</span></td>
-					<td>Status&nbsp;&nbsp;<span class="homestatsdata">$inc_status$</span></td>
-				</tr>
-				<tr>
-					<td>Peer Connections&nbsp;&nbsp;<span class="homestatsdata">$peerconnections$</span></td>
-					<td>File Bytes In&nbsp;&nbsp;<span class="homestatsdata">$filebytesin$</span></td>
-					<td>Received&nbsp;&nbsp;<span class="homestatsdata">$inc_received$</span></td>
-				</tr>
-				<tr>
-					<td>B/s In&nbsp;&nbsp;<span class="homestatsdata">$bpsin$</span></td>
-					<td>File Bytes Out&nbsp;&nbsp;<span class="homestatsdata">$filebytesout$</span></td>
-					<td>Negotiating&nbsp;&nbsp;<span class="homestatsdata">$inc_negotiating$</span></td>
-				</tr>
-				<tr>
-					<td>B/s Out&nbsp;&nbsp;<span class="homestatsdata">$bpsout$</span></td>
-					<td>Upload Ratio&nbsp;&nbsp;<span class="homestatsdata">$uploadratio$</span></td>
-					<td>Placed&nbsp;&nbsp;<span class="homestatsdata">$inc_placed$</span></td>
-				</tr>
-			</tbody>
-		</table>
+<br/>
+<div class="ui container">
+    <table class="ui green celled table">
+        <thead>
+        <th>Active Transfers</th>
+        <th>Bytes Transferred</th>
+        <th>Incoming Connections</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Downloading&nbsp;&nbsp;<span class="homestatsdata">$downloading$</span></td>
+            <td>Total Bytes In&nbsp;&nbsp;<span class="homestatsdata">$totalbytesin$</span></td>
+            <td>Port&nbsp;&nbsp;<span class="homestatsdata">$inc_port$</span></td>
+        </tr>
+        <tr>
+            <td>Seeding&nbsp;&nbsp;<span class="homestatsdata">$seeding$</span></td>
+            <td>Total Bytes Out&nbsp;&nbsp;<span class="homestatsdata">$totalbytesout$</span></td>
+            <td>Status&nbsp;&nbsp;<span class="homestatsdata">$inc_status$</span></td>
+        </tr>
+        <tr>
+            <td>Peer Connections&nbsp;&nbsp;<span class="homestatsdata">$peerconnections$</span></td>
+            <td>File Bytes In&nbsp;&nbsp;<span class="homestatsdata">$filebytesin$</span></td>
+            <td>Received&nbsp;&nbsp;<span class="homestatsdata">$inc_received$</span></td>
+        </tr>
+        <tr>
+            <td>B/s In&nbsp;&nbsp;<span class="homestatsdata">$bpsin$</span></td>
+            <td>File Bytes Out&nbsp;&nbsp;<span class="homestatsdata">$filebytesout$</span></td>
+            <td>Negotiating&nbsp;&nbsp;<span class="homestatsdata">$inc_negotiating$</span></td>
+        </tr>
+        <tr>
+            <td>B/s Out&nbsp;&nbsp;<span class="homestatsdata">$bpsout$</span></td>
+            <td>Upload Ratio&nbsp;&nbsp;<span class="homestatsdata">$uploadratio$</span></td>
+            <td>Placed&nbsp;&nbsp;<span class="homestatsdata">$inc_placed$</span></td>
+        </tr>
+        </tbody>
+    </table>
 
-		<br/>
+    <br/>
 
-		<table class="ui selectable celled table">
-			<tbody>
-				<!--list_start eventlog max_lines=100-->
-				<tr>
-					<td>$line$</td>
-				</tr>
-				<!--list_end-->
-			</tbody>
-		</table>
-	</div>
-	<br/><br/>
+    <table class="ui selectable celled table">
+        <tbody>
+        <!--list_start eventlog max_lines=100-->
+        <tr>
+            <td>$line$</td>
+        </tr>
+        <!--list_end-->
+        </tbody>
+    </table>
+</div>
+<br/><br/>
 
 </body>
 </html>

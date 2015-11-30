@@ -1,57 +1,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="content-type">
-	<title>Confirm Delete - Tixati Web Interface</title>
-	<link rel="stylesheet" type="text/css" href="/main.css">
-	<link rel="stylesheet" type="text/css" href="/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="icon.css">
-	<script type="application/javascript" src="/jquery.min.js"></script>
-	<script type="application/javascript"  src="/semantic.min.js"></script>
+    <link rel="icon" type="image/png" href="/favico.png">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Confirm Delete - Tixati Web Interface</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="icon.css">
+    <script type="application/javascript" src="/jquery.min.js"></script>
+    <script type="application/javascript" src="/semantic.min.js"></script>
 </head>
 <body>
 
 <br/>
 Confirm Transfer Removal AND File Delete
 <br/>
-<br/>
 
 <form method="post" action="/transfers/action" class="ui form">
 
-<table class="xferstable ui table">
-	<thead>
-	<tr>
-		<th>&nbsp;</th>
-		<th>Name</th>
-		<th>Bytes</th>
-		<th>&#37;</th>
-		<th>Status</th>
-		<th>B/s In</th>
-		<th>B/s Out</th>
-		<th>Priority</th>
-		<th>Time Left</th>
-	</tr>
-	</thead>
-	<tbody>
-<!--list_start selected_transfers-->
-	<tr class="$statusclass_alt$">
-		<td><input type="checkbox" name="$guid$" value="1" checked/></td>
-		<td><a href="/transfers/$guid$/details">$name$</a></td>
-		<td>$bytes$</td>
-		<td>$progress$</td>
-		<td>$status$</td>
-		<td>$bps_in$</td>
-		<td>$bps_out$</td>
-		<td>$priority$</td>
-		<td>$timeleft$</td>
-	</tr>
-	</tbody>
-<!--list_end-->
-</table>
+    <table class="xferstable ui table">
+        <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+            <th>Bytes</th>
+            <th>&#37;</th>
+            <th>Status</th>
+            <th>B/s In</th>
+            <th>B/s Out</th>
+            <th>Priority</th>
+            <th>Time Left</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--list_start selected_transfers-->
+        <tr class="$statusclass_alt$">
+            <td><input type="checkbox" name="$guid$" value="1" checked/></td>
+            <td><a href="/transfers/$guid$/details">$name$</a></td>
+            <td>$bytes$</td>
+            <td>$progress$</td>
+            <td>$status$</td>
+            <td>$bps_in$</td>
+            <td>$bps_out$</td>
+            <td>$priority$</td>
+            <td>$timeleft$</td>
+        </tr>
+        </tbody>
+        <!--list_end-->
+    </table>
 
-<br/>
-<input class="ui submit red button" type="submit" name="deleteconf" value="Delete Transfers And Downloaded Files"/>&nbsp;
-<input class="ui submit button" type="submit" name="nav_transfers" Value="Cancel"/>
+    <br/>
+    <input class="ui submit red button" type="submit" name="deleteconf" value="Delete Transfers And Downloaded Files"/>&nbsp;
+    <input class="ui submit button" type="submit" name="nav_transfers" Value="Cancel"/>
 </form>
 
 <br/>
