@@ -10,15 +10,15 @@
 
 ### Installation
 
-- Clone the repo into choosen folder
-- Go to Tixati -> Settings -> Web Interface and enable it
-- In *HTML Templates* section click *Select Folder* and select folder with theme
+- Clone the repo into choosen folder.
+- Go to **Tixati** -> **Settings** -> **Web Interface** and enable it.
+- In **HTML Templates** section click **Select Folder** and select folder with theme.
 - That's it!
 
 ### Customization
 
-Theme uses Semantic UI, so it's easily themeable! Check **[Here](http://semantic-ui.com/usage/theming.html)**.
+Theme uses Semantic UI, so it's easily themeable! Check documentation **[here](http://semantic-ui.com/usage/theming.html)**.
 
-You can also use *main.css* file to introduce your changes - also, HTML files are quite easy to grasp.
+You can use *main.css* file to introduce your own changes - also, HTML files here are quite easy to grasp.
 
 
