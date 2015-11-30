@@ -136,62 +136,62 @@ table.xfersctrls td {
 
 .offline_even {
     color: #9E2E27;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .queued_even {
     color: #00F;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .downloading_even {
     color: #0C6000;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .seeding_even {
     color: #259985;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .standby_even {
     color: #00F;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .complete_even {
     color: #87215B;
-    background-color: #EEE;
+    background-color: transparent;
 }
 
 .offline_odd {
     color: #9E2E27;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .queued_odd {
     color: #00F;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .downloading_odd {
     color: #0C6000;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .seeding_odd {
     color: #259985;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .standby_odd {
     color: #00F;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .complete_odd {
     color: #87215B;
-    background-color: #FFF;
+    background-color: transparent;
 }
 
 .offline {
