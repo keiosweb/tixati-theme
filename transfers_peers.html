@@ -40,20 +40,18 @@
 
 <br/>
 <div class="ui container">
-
-<!-- todo - sorting doesn't work for sizes -->
     <table class="xferstable peer_table ui sortable table" id="peers-table">
         <thead>
         <tr>
             <th>Name</th>
             <th>Link</th>
-            <th>Bytes In</th>
-            <th>Bytes Out</th>
-            <th>Progress</th>
+            <th class="bytes">Bytes In</th>
+            <th class="bytes">Bytes Out</th>
+            <th class="number">Progress</th>
             <th>Status</th>
-            <th>B/s In</th>
-            <th>B/s Out</th>
-            <th>Rem B/s</th>
+            <th class="bytes">B/s In</th>
+            <th class="bytes">B/s Out</th>
+            <th class="bytes">Rem B/s</th>
         </tr>
         </thead>
         <tbody>
@@ -77,6 +75,30 @@
 <script type="application/javascript">
     $(document).ready(function () {
         $('#peers-table').tablesort();
+
+        $('#peers-table > thead > tr > th.bytes').data('sortBy', function (th, td, tablesort) {
+
+            if (td.text().indexOf(" K") > -1) {
+                var entry = td.text().replace(" K", "").replace(",","");
+                var result = parseFloat(entry) * 1024;
+            }
+            else if (td.text().indexOf(" M") > -1) {
+                var entry = td.text().replace(" M", "").replace(",","");
+                var result = parseFloat(entry) * 1048576;
+            }
+            else {
+                result = parseFloat(td.text());
+            }
+            if (isNaN(result)){
+                result = -1;
+            }
+            return result;
+        });
+
+        $('#peers-table > thead > tr > th.number').data('sortBy', function (th, td, tablesort) {
+            return parseFloat(td.text())*10;
+        });
+
     });
 </script>
 

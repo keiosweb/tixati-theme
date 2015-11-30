@@ -76,11 +76,11 @@
         <tr>
             <th>&nbsp;</th>
             <th>Name</th>
-            <th>Bytes</th>
-            <th>&#37;</th>
+            <th class="no-sort">Bytes</th>
+            <th class="number">&#37;</th>
             <th>Status</th>
-            <th>B/s In</th>
-            <th>B/s Out</th>
+            <th class="bytes">B/s In</th>
+            <th class="bytes">B/s Out</th>
             <th>Priority</th>
             <th>Time Left</th>
         </tr>
@@ -411,7 +411,31 @@
 <script type="application/javascript">
     $(document).ready(function () {
         $('#torrents-table').tablesort();
-    });
+
+        $('#torrents-table > thead > tr > th.bytes').data('sortBy', function (th, td, tablesort) {
+
+            if (td.text().indexOf(" K") > -1) {
+                var entry = td.text().replace(" K", "").replace(",","");
+                var result = parseFloat(entry) * 1024;
+            }
+            else if (td.text().indexOf(" M") > -1) {
+                var entry = td.text().replace(" M", "").replace(",","");
+                var result = parseFloat(entry) * 1048576;
+            }
+            else {
+                result = parseFloat(td.text());
+            }
+            if (isNaN(result)){
+                result = -1;
+            }
+            return result;
+        });
+
+        $('#torrents-table > thead > tr > th.number').data('sortBy', function (th, td, tablesort) {
+            return parseFloat(td.text())*10);
+        });
+
+        });
 </script>
 </body>
 </html>

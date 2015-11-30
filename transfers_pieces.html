@@ -46,8 +46,8 @@
         <thead>
         <tr>
             <th>Index</th>
-            <th>Bytes</th>
-            <th>Progress</th>
+            <th class="bytes">Bytes</th>
+            <th class="number">Progress</th>
             <th>Status</th>
         </tr>
         </thead>
@@ -67,9 +67,30 @@
 <script type="application/javascript">
     $(document).ready(function () {
         $('#pieces-table').tablesort();
+        $('#pieces-table > thead > tr > th.bytes').data('sortBy', function (th, td, tablesort) {
+
+            if (td.text().indexOf(" K") > -1) {
+                var entry = td.text().replace(" K", "").replace(",","");
+                var result = parseFloat(entry) * 1024;
+            }
+            else if (td.text().indexOf(" M") > -1) {
+                var entry = td.text().replace(" M", "").replace(",","");
+                var result = parseFloat(entry) * 1048576;
+            }
+            else {
+                result = parseFloat(td.text());
+            }
+            if (isNaN(result)){
+                result = -1;
+            }
+            return result;
+        });
+
+        $('#pieces-table > thead > tr > th.number').data('sortBy', function (th, td, tablesort) {
+            return parseFloat(td.text())*10;
+        });
     });
 </script>
-
 </body>
 </html>
 
