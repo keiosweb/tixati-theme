@@ -1,5 +1,9 @@
 # Tixati Semantic Theme
 
+### THIS IS A MIRROR
+
+**Main repository with latest version is available at [BitBucket](https://bitbucket.org/keiosweb/tixati-semanticui-theme)**
+
 - Created for **[Tixati Torrent Client](http://www.tixati.com/) WebInterface**
 - Uses **[Semantic UI](http://semantic-ui.com/)**
 - Looks nice
